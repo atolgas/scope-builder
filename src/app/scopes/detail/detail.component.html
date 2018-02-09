@@ -1,0 +1,56 @@
+<div class="detail-content">
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{ title }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    {{ desc }}
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <app-accordion>
+        <app-accordion-group heading="Scope List ">
+            <ul class="list-group">
+                <li
+                  class="list-group-item"
+                  *ngFor="let scope of scopes">
+                  {{ scope.ScopeTitle }}
+                </li>
+              </ul>
+        </app-accordion-group>
+      </app-accordion>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+      <app-accordion>
+          <app-accordion-group heading="Guess List">
+              <ul class="list-group">
+                  <li
+                    class="list-group-item"
+                    *ngFor="let guess of guesses">
+                    {{ guess.GuessTitle }}
+                  </li>
+                </ul>
+          </app-accordion-group>
+        </app-accordion>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group">
+      <button type="button" class="btn btn-warning" (click)="onEdit()">
+        <i class="fa fa-edit"></i> Edit</button>
+      <button type="button" class="btn btn-danger" (click)="onDelete()">
+        <i class="fa fa-trash"></i> Delete</button>
+    </div>
+  </div>
+</div>
+</div>
+

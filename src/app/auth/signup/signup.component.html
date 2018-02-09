@@ -1,0 +1,90 @@
+<div class="row">
+  <div class="col-xs-3"></div>
+  <div class="col-xs-6">
+
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="register()"
+      style="
+      background: #f8f8f8;
+      border-radius: 5px;
+      padding: 20px;">
+      <div class="row">
+        <div class="col-xs-12">
+          <h3 class="text-center">
+                SIGN UP
+          </h3>
+          <hr>
+          <div class="form-group">
+            <label for="Name">Name</label>
+            <input
+            type="text"
+            id="Name"
+            formControlName="Name"
+            class="form-control">
+            <small class="text-danger text-muted" *ngIf="!registerForm.controls.Name.valid && registerForm.controls.Name.touched">
+                <i class="fa fa-info"></i> Your name is not valid.
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="Name">Email</label>
+              <input
+              type="email"
+              id="Email"
+              formControlName="Email"
+              class="form-control">
+              <small class="text-danger text-muted" *ngIf="!registerForm.controls.Email.valid && registerForm.controls.Email.touched">
+                  <i class="fa fa-info"></i> Your e-mail address is not valid.
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="Name">Password</label>
+                <input
+                type="password"
+                id="Password"
+                formControlName="Password"
+                class="form-control">
+                <small class="text-danger text-muted" *ngIf="!registerForm.controls.Password.valid && registerForm.controls.Password.touched">
+                    <i class="fa fa-info"></i> Password must be min. 8 characters, one upper case, one digit and one special character.
+                </small>
+              </div>
+
+            </div>
+          </div>
+            <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="Name">Confirm Password</label>
+                <input
+                type="password"
+                id="ConfirmPassword"
+                formControlName="ConfirmPassword"
+                class="form-control"
+                [(ngModel)]="ConfirmedPassword">
+                <small class="text-danger text-muted" *ngIf="registerForm.controls.ConfirmPassword.errors?.MatchPassword && ConfirmedPassword"
+                ><i class="fa fa-warning"></i> Passwords not match</small>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+              <div class="col-xs-12 text-center">
+                <button
+                  type="submit"
+                  class="btn btn-success"
+                  [disabled]="!registerForm.valid"><i class="fa fa-user-plus"></i> Register</button>
+                  <a [routerLink]="['/login']" class="btn btn-primary"><i class="fa fa-sign-in"></i> Login</a>
+              </div>
+            </div>
+    </form>
+  </div>
+  <div class="col-xs-3"></div>
+</div>

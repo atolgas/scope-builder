@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-8">
+      <h2>
+        SCOPE LIST
+      </h2>
+      <hr>
+      <div class="row" style="background: rgb(70, 59, 110); color:#fff">
+        <div class="col-xs-2 list-group-item-heading" style="padding: 20px;">SCOPE ID</div>
+        <div class="col-xs-6 list-group-item-heading" style="padding: 20px;">TITLE OF ITEM</div>
+      </div>
+      <div *ngFor="let scope of items">
+          <div class="row list-group-item clearfix">
+            <div class="col-xs-2 list-group-item-text">
+                {{ scope.GuessId }}
+            </div>
+            <div class="col-xs-6 list-group-item-text">
+                {{ scope.ScopeTitle }}
+            </div>
+          </div>
+      </div>
+  </div>
+</div>

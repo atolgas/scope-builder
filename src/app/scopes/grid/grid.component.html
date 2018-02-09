@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onNew()"><i class="fa fa-plus"></i> New Scope</button>
+    <a routerLink="./../scope-list" class="btn btn-primary"><i class="fa fa-list"></i> Scope Lists</a>
+    <a routerLink="./../guess-list" class="btn btn-warning"><i class="fa fa-list"></i> Guess Lists</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <p style="padding:20px 10px 10px 5px">
+        <i class="fa fa-info"></i> Please choose a scope from list of scopes
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <app-item
+      *ngFor="let scopeEl of items; let i = index"
+      [scope]="scopeEl"
+      [index]="i"></app-item>
+  </div>
+</div>
+

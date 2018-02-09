@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form
+    (ngSubmit)="onSubmit()"
+    [formGroup]="changePassForm"
+    style="
+    background: #f8f8f8;
+    border-radius: 5px;
+    padding: 20px;">
+    <div class="row">
+      <div class="col-xs-8">
+        <div class="form-group">
+          <label for="OldPassword">
+            Current Password
+          </label>
+          <input
+          type="password"
+          id="OldPassword"
+          formControlName="OldPassword"
+          class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-8">
+        <div class="form-group">
+          <label for="OldPassword">
+            New Password
+          </label>
+          <input
+          type="password"
+          id="NewPassword"
+          formControlName="NewPassword"
+          class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-8">
+        <div class="form-group">
+          <label for="ConfirmPassword">
+            Confirm Password
+          </label>
+          <input
+          type="password"
+          id="ConfirmPassword"
+          formControlName="ConfirmPassword"
+          class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!changePassForm.valid"><i class="fa fa-check"></i> Submit</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>

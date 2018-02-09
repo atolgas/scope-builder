@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-xs-12">
+      <h3>
+      <i class="fa fa-user"></i> User Name </h3>
+      <h5>
+          {{ userName }}
+      </h5>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <a [routerLink]="['change-password']" class="btn btn-primary">
+      <i class="fa fa-key"></i>
+      Change Password
+    </a>
+    <a [routerLink]="['./../scopes']" class="btn btn-success">Scopes</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <router-outlet></router-outlet>
+  </div>
+</div>

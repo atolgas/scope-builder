@@ -1,0 +1,108 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="scopeForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              id="Title"
+              formControlName="Title"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="desc">Description</label>
+            <textarea
+              id="Desc"
+              class="form-control"
+              formControlName="Desc"
+              rows="6"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" formArrayName="Scopes">
+            <label for="scopes">Scopes List</label>
+          <div
+            class="row"
+            *ngFor="let scopeCtrl of getScopes(scopeForm); let i = index"
+            [formGroupName]="i"
+            style="margin-top: 10px;">
+            <div class="col-xs-9">
+              <textarea
+                class="form-control"
+                formControlName="ScopeTitle"
+                rows="4">
+                </textarea>
+            </div>
+            <div class="col-xs-3">
+              <button
+                type="button"
+                class="btn btn-danger"
+                style="margin-top:25px"
+                (click)="onDeleteScopes(i)"><i class="fa fa-trash"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 10px">
+          <div class="col-xs-12">
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="onAddScopes()"><i class="fa fa-plus"></i> Add Scope</button>
+          </div>
+        </div>
+      <hr>
+      <div class="row">
+        <div class="col-xs-12" formArrayName="Guesses">
+            <label for="guesses">Guesses List</label>
+          <div
+            class="row"
+            *ngFor="let guessCtrl of getGuesses(scopeForm); let i = index"
+            [formGroupName]="i"
+            style="margin-top: 10px;">
+            <div class="col-xs-9">
+              <textarea
+                type="text"
+                class="form-control"
+                formControlName="GuessTitle"
+                rows="4">
+              </textarea>
+            </div>
+            <div class="col-xs-3">
+              <button
+                type="button"
+                class="btn btn-danger"
+                style="margin-top:25px"
+                (click)="onDeleteGuesses(i)"><i class="fa fa-trash"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 10px">
+          <div class="col-xs-12">
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="onAddGuesses()"><i class="fa fa-plus"></i> Add Guess</button>
+          </div>
+      </div>
+      <hr>
+      <div class="row">
+            <div class="col-xs-12">
+              <button
+                type="submit"
+                class="btn btn-success"
+                [disabled]="!scopeForm.valid"><i class="fa fa-check"></i> Save</button>
+              <button type="button" class="btn btn-danger" (click)="onCancel()"><i class="fa fa-close"></i> Cancel</button>
+            </div>
+      </div>
+    </form>
+  </div>
+</div>
